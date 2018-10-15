@@ -46,9 +46,7 @@ const glue = (parts) => { // schemaFolderPath, options={}
 			ignore = (graphql || {}).ignore;
 		}
 		let resolverFiles = path.join(schemaFolderPath || schemaPathInConfig || 'schema', resolverFileGlob);
-		console.warn('resolverFiles', resolverFiles);
 		let schemaGraphQlFiles = path.join(schemaFolderPath || schemaPathInConfig || 'schema', '**/*.{graphql,gql}');
-		console.warn('schemaGraphQlFiles', schemaGraphQlFiles);
 		let optionIgnore = options.ignore || ignore;
 		let ignored = optionIgnore
 			? typeof(optionIgnore) == 'string'
@@ -64,7 +62,6 @@ const glue = (parts) => { // schemaFolderPath, options={}
 			...glob.sync(schemaGraphQlFiles, { ignore: ignored }) || []
 		];
 	});
-	console.warn('jsFiles', jsFiles);
 	const modules = jsFiles.map(f => require(path.join(CWD, f)))
 	modules.push(...graphqlFiles.map(f => {
 		const parts = getSchemaParts(fs.readFileSync(path.join(CWD, f), 'utf8'))
@@ -90,12 +87,11 @@ const glue = (parts) => { // schemaFolderPath, options={}
 	}, { schema: '', resolver: {}, query: 'type Query {', mutation: 'type Mutation {', subscription: 'type Subscription {' })
 
 	if (!gluedSchema.schema) {
-		if (schemaPathInConfig)
+		if (schemaPathInConfig) {
 			throw new Error(`Missing GraphQL Schema: No schemas found under the path '${path.join(CWD, schemaPathInConfig)}' defined in the appconfig.json`)
-		else if (schemaFolderPath)
-			throw new Error(`Missing GraphQL Schema: No schemas found under the path '${path.join(CWD, schemaFolderPath)}'`)
-		else
+		} else {
 			throw new Error(`Missing GraphQL Schema: No schemas found under the path '${path.join(CWD, 'schema')}'`)
+		}
 	}
 
 	if (gluedSchema.query != 'type Query {') {
