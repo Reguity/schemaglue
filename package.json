@@ -1,47 +1,13 @@
 {
-  "_from": "github:Reguity/schemaglue",
-  "_id": "schemaglue@4.0.2",
-  "_inBundle": false,
-  "_integrity": "",
-  "_location": "/schemaglue",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "git",
-    "raw": "Reguity/schemaglue",
-    "rawSpec": "Reguity/schemaglue",
-    "saveSpec": "github:Reguity/schemaglue",
-    "fetchSpec": null,
-    "gitCommittish": null
-  },
-  "_requiredBy": [
-    "#USER",
-    "/"
-  ],
-  "_resolved": "github:Reguity/schemaglue#0c6604453062f4cab33a520296c231ebfeab9e4c",
-  "_spec": "Reguity/schemaglue",
-  "_where": "/var/www/api-login",
-  "author": {
-    "name": "Nicolas Dao"
-  },
-  "bugs": {
-    "url": "https://github.com/nicolasdao/schemaglue/issues"
-  },
-  "bundleDependencies": false,
-  "dependencies": {
-    "glob": "^7.1.2",
-    "shortid": "^2.2.8"
-  },
-  "deprecated": false,
+  "name": "schemaglue",
+  "version": "4.0.2",
   "description": "Glues multiple parts of a GraphQL schema together(incl. resolvers). This library is designed specifically for building GraphQL schema using Apollo's graphql-tools.js",
-  "devDependencies": {
-    "chai": "^4.1.2",
-    "eslint": "^4.2.0",
-    "graphql": "^0.10.0",
-    "graphql-tools": "^1.2.2",
-    "mocha": "^3.5.0",
-    "standard-version": "^4.2.0"
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "eslint": "eslint index.js test/ src/ --fix",
+    "release": "standard-version"
   },
-  "homepage": "https://github.com/nicolasdao/schemaglue#readme",
   "keywords": [
     "graphql",
     "schema",
@@ -49,17 +15,27 @@
     "appolo",
     "graphql-tools"
   ],
+  "author": "Nicolas Dao",
   "license": "BSD-3-Clause",
-  "main": "index.js",
-  "name": "schemaglue",
+  "bugs": {
+    "url": "https://github.com/Reguity/schemaglue/issues"
+  },
+  "homepage": "https://github.com/Reguity/schemaglue#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nicolasdao/schemaglue.git"
+    "url": "ssh://git@github.com:Reguity/schemaglue.git"
   },
-  "scripts": {
-    "eslint": "eslint index.js test/ src/ --fix",
-    "release": "standard-version",
-    "test": "mocha"
+  "dependencies": {
+    "glob": "^7.1.2",
+    "shortid": "^2.2.8"
   },
-  "version": "4.0.2"
+  "deprecated": false,
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "eslint": "^4.2.0",
+    "graphql": "^0.10.0",
+    "graphql-tools": "^1.2.2",
+    "mocha": "^3.5.0",
+    "standard-version": "^4.2.0"
+  }
 }
