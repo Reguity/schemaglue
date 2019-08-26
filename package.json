@@ -32,8 +32,8 @@
   "deprecated": false,
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^6.2.1",
-    "graphql": "^14.5.0",
+    "eslint": "^6.2.2",
+    "graphql": "^14.5.3",
     "graphql-tools": "^4.0.5",
     "mocha": "^6.2.0",
     "standard-version": "^7.0.0"
