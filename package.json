@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "glob": "^7.1.4",
-    "shortid": "^2.2.14"
+    "shortid": "^2.2.15"
   },
   "deprecated": false,
   "devDependencies": {
