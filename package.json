@@ -32,10 +32,10 @@
   "deprecated": false,
   "devDependencies": {
     "chai": "^4.2.0",
-    "eslint": "^6.7.2",
+    "eslint": "^6.8.0",
     "graphql": "^14.5.8",
     "graphql-tools": "^4.0.6",
-    "mocha": "^6.2.2",
+    "mocha": "^7.0.0",
     "standard-version": "^7.0.1"
   }
 }
